@@ -12,7 +12,7 @@ function App() {
     formData.append("file", file);
     formData.append("user", user);
     axios
-      .post("http://localhost:3001/upload",formData)
+      .post("http://localhost:3001/api/upload",formData)
       .then((res) => {
         console.log("uplode");
         console.log(res.data);
@@ -21,7 +21,7 @@ function App() {
   };
   useEffect(()=>{
     const req = async ()=>{
-      await axios.get("http://localhost:3001/get")
+      await axios.get("http://localhost:3001/api/get")
       .then((res)=>{
         setUsers(res.data.msg);
       })
